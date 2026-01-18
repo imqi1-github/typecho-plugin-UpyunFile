@@ -5,7 +5,7 @@
  * @package UpyunFile
  * @author 棋
  * @version 1.0.0
- * @link https://github.com/imqi1-github/routes-helper
+ * @link https://github.com/imqi1-github/typecho-plugin-UpyunFile
  * @date 2026-01-17
  */
 
