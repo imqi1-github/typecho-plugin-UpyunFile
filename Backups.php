@@ -3,6 +3,7 @@
 namespace UpyunFile;
 
 use Typecho\Db;
+use Utils\Helper;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) {
   exit;
