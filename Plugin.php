@@ -291,14 +291,24 @@ class UpyunFile_Plugin implements PluginInterface
    * @access public
    * @param array $content 文件相关信息
    * @return string
-   * @throws Exception
    */
   public static function deleteHandle(array $content): string
   {
     $upyun = self::upyunInit();
     $path = $content['attachment']->path;
 
-    return $upyun->delete($path);
+    try {
+      $result = $upyun->delete($path);
+      if (!$result) {
+        error_log('UpyunFile: 删除云存储文件失败 - ' . $path);
+      }
+    } catch (\Exception $e) {
+      // 记录错误但不阻止删除本地记录
+      error_log('UpyunFile: 删除云存储文件异常 - ' . $path . ' - ' . $e->getMessage());
+    }
+
+    // 始终返回路径，允许 Typecho 删除本地记录
+    return $path;
   }
 
   /**
