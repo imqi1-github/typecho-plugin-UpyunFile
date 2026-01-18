@@ -119,6 +119,9 @@ class UpyunFile_Plugin implements PluginInterface
     $etime = new Text('etime', NULL, NULL, _t('签名过期时间'), _t('单位为秒'));
     $etime->input->setAttribute('class', 'mini');
     $form->addInput($etime);
+
+    // 配置备份功能
+    require_once('Backups.php');
   }
 
   /**
