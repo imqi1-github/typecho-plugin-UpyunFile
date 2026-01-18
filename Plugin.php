@@ -30,8 +30,8 @@ class UpyunFile_Plugin implements PluginInterface
 {
 
   //上传文件目录
-  const string UPLOAD_DIR = '/typecho/usr/uploads';
-  const array IMG_EXT = ['JPG', 'JPEG', 'PNG', 'BMP'];
+  const UPLOAD_DIR = '/typecho/usr/uploads';
+  const IMG_EXT = ['JPG', 'JPEG', 'PNG', 'BMP'];
 
   /**
    * 激活插件方法,如果激活失败,直接抛出异常
